@@ -6,7 +6,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: []
+			data: [1,2,3,4]
 		};
 	}
 
