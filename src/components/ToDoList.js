@@ -1,19 +1,16 @@
 import React from 'react';
+import ToDoStyle from '../styles/ToDo.css';
 
-class ToDoList extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			data: []
-		};
-	}
+const TodoList = props =>
 
-	render() {
-		const ToDos = this.props.tdlist.map((item, i) => <li key={i}>{item}</li>)
-		return (
-			<ul>{ToDos}</ul>
-		);
-	}
-}
+	<div>
+		{props.tdlist.map(oneToDo =>
+			<div key={oneToDo.id} className={ToDoStyle.oneTodo}
+				onClick={() => { props.removeTodo(oneToDo.id) }}>
+				<div >{oneToDo.id}</div>
+				<div>{oneToDo.text}</div>
+			</div>
+		)}
+	</div> 
 
-export default ToDoList;
+export default TodoList;

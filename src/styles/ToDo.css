@@ -1,0 +1,13 @@
+.oneTodo {
+	background-color: rgb(204, 204, 204);
+	color: rgb(87, 87, 87);
+	padding: 12px;
+	margin-bottom: 12px;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}

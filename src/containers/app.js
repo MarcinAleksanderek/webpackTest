@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './App.css';
+import style from '../styles/App.css';
 import Title from '../components/Title'
 import ToDoList from '../components/ToDoList'
 
@@ -7,8 +7,18 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			data: [1,2,3,4]
+			data: [{
+				id: 1,
+				text: 'clean room'
+			}, {
+				id: 2,
+				text: 'wash the dishes'
+			}, {
+				id: 3,
+				text: 'feed my cat'
+			}]
 		};
+		this.removeTodo = this.removeTodo.bind(this);
 	}
 
 	addTodo(val) {
@@ -29,7 +39,7 @@ class App extends React.Component {
 		return (
 			<div className={style.TodoApp}>
 				<Title title={'ToDo App:'} numOfToDos={this.state.data.length} />
-				<ToDoList tdlist={this.state.data}/>
+				<ToDoList tdlist={this.state.data} removeTodo={this.removeTodo}/>
 			</div>
 		);
 	}
